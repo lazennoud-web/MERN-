@@ -40,7 +40,11 @@ app.post('/api/items', async (req, res) => {
             return res.status(400).json({ message: 'Nom obligatoire' });
         }
 
-        const item = await Item.create({ name, description });
+        const item = await Item.create({
+            name: name.trim(),
+            description
+        });
+
         res.status(201).json(item);
     } catch (err) {
         res.status(500).json({ message: 'Erreur serveur' });
