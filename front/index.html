@@ -1,13 +1,60 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>CRM - Gestion des éléments</title>
+
     <link rel="stylesheet" href="./index.css">
+    <script src="./config.js"></script>
+    <script src="./index.js" defer></script>
 </head>
+
 <body>
-    
-    <script src="./index.js"></script>
+    <header>
+        <h1>Mon CRM</h1>
+        <p>Gestion des éléments</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Ajouter un élément</h2>
+
+            <form id="item-form">
+                <label for="name">Nom</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Nom de l'élément"
+                    required
+                >
+
+                <label for="description">Description</label>
+                <textarea
+                    id="description"
+                    name="description"
+                    placeholder="Description de l'élément"
+                ></textarea>
+
+                <button type="submit">Ajouter</button>
+            </form>
+
+            <p id="message" role="status"></p>
+        </section>
+
+        <section>
+            <h2>Liste des éléments</h2>
+            <button type="button" id="refresh-button">
+                Actualiser la liste
+            </button>
+
+            <div id="items-list">
+                Chargement des éléments...
+            </div>
+        </section>
+    </main>
 </body>
 </html>
